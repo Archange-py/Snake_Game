@@ -136,6 +136,4 @@ class GUI:
                 if keydown(KEY_DOWN): I.sens = "R" ; next(I) ; draw_curseur(I.curs) ; sleep(0.15)
                 if keydown(KEY_BACKSPACE): change_color(GUI.color_mode) ; GUI.clean() ; GUI.Menu.draw() ; break
 
-GUI.Graph.list_score = [randint(0,150) for _ in range(70)]
-GUI.Graph.list_score.insert(0,0)
 GUI.main()
