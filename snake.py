@@ -35,7 +35,7 @@ class GUI:
                     draw_string("  play        ",120,100,Screen.palette["PrimaryText"],Screen.palette["SecondaryText"])
                     draw_string("  graph        ",120,130,Screen.palette["PrimaryText"],Screen.palette["SecondaryText"])
                     draw_string(" >  settings  <",95,160,Screen.palette["PrimaryText"],Screen.palette["SecondaryText"])
-            GUI.clean() ; I = iter(Curseur("play","graph","settings"))
+            GUI.clean() ; I = iter(Curseur("play","graph","settings",default="play"))
             draw_string("Snake",138,50,Screen.palette["PrimaryText"],Screen.palette["SecondaryText"])
             draw_string("  play  ",120,100,Screen.palette["PrimaryText"],Screen.palette["SecondaryText"])
             draw_string("  graph  ",120,130,Screen.palette["PrimaryText"],Screen.palette["SecondaryText"])
@@ -51,7 +51,7 @@ class GUI:
         def draw():
             GUI.clean()
             draw_string("Score:0",125,10,Screen.palette["PrimaryText"],Screen.palette["SecondaryText"])
-            dx,dy,s,food,v,pt,GUI.Play.score = 0,1,[[160,110]],True,GUI.speed,monotonic(),0 ; sleep(0.15)
+            dx,dy,s,q,food,v,pt,GUI.Play.score = 0,1,[[160,110]],[160,110],True,GUI.speed,monotonic(),0 ; sleep(0.15)
             def find_pos(fx,fy,x,y):
                 if fy < y: return 0,-1
                 if fy > y: return 0,1
